@@ -77,6 +77,58 @@ const Navbar = () => {
             Create Account
           </button>
         )}
+        <img
+          onClick={() => setShowMenu(true)}
+          src={assets.menu_icon}
+          className="w-6 md:hidden"
+          alt=""
+        />
+        {/* Mobile Menu */}
+        <div
+          className={`${
+            showMenu ? "fixed w-full" : "w-0 h-0"
+          } md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all`}
+        >
+          <div className="flex items-center justify-between px-5 py-6">
+            <img className="w-36" src={assets.logo} alt="" />
+            <img
+              onClick={() => setShowMenu(false)}
+              className="w-7"
+              src={assets.cross_icon}
+              alt=""
+            />
+          </div>
+          <ul className="flex flex-col items-start gap-2 mt-5 px-2 text-lg font-medium">
+            <NavLink
+              className="border w-full px-4 py-2 border-zinc-200 rounded-lg"
+              to={"/"}
+              onClick={() => setShowMenu(false)}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              className="border w-full px-4 py-2 border-zinc-200 rounded-lg"
+              to={"/doctors"}
+              onClick={() => setShowMenu(false)}
+            >
+              All Doctors
+            </NavLink>
+            <NavLink
+              className="border w-full px-4 py-2 border-zinc-200 rounded-lg"
+              to={"/about"}
+              onClick={() => setShowMenu(false)}
+            >
+              About
+            </NavLink>
+            <NavLink
+              className="border w-full px-4 py-2 border-zinc-200 rounded-lg"
+              to={"/contact"}
+              onClick={() => setShowMenu(false)}
+            >
+              Contact
+            </NavLink>
+          </ul>
+        </div>
       </div>
     </div>
   );

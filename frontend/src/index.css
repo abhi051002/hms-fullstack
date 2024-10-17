@@ -10,6 +10,11 @@
   @apply block;
 }
 
+@media (max-width: 767px) {
+  .active {
+    @apply bg-primary text-white shadow-md;
+  }
+}
 ::-webkit-scrollbar {
   @apply hidden;
 }
