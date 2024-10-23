@@ -12,6 +12,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
   const { setAToken, backendUrl } = useContext(AdminContext);
   const navigate = useNavigate();
 
@@ -26,7 +27,7 @@ const Login = () => {
         });
         if (data.success) {
           localStorage.setItem("aToken", data.token);
-          await sleep(5000);
+          await sleep(2000);
           toast.success(data.message);
           setAToken(data.token);
         } else {
@@ -60,15 +61,21 @@ const Login = () => {
             required
           />
         </div>
-        <div className="w-full">
+        <div className="w-full relative">
           <p>Password</p>
           <input
-            type="password"
+            type={showPassword ? "text" : "password"} // Toggle between text and password
             className="border border-[#DADADA] rounded w-full p-2 mt-1 outline-primary"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             required
           />
+          <span
+            className="absolute right-3 top-9 cursor-pointer text-primary"
+            onClick={() => setShowPassword(!showPassword)} // Toggle the state
+          >
+            {showPassword ? "Hide" : "Show"} {/* Toggle text */}
+          </span>
         </div>
 
         <button

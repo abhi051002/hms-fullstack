@@ -5,10 +5,12 @@ const Login = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
   };
+
   return (
     <form className="min-h-[80vh] flex items-center" onSubmit={onSubmitHandler}>
       <div className="flex flex-col gap-3 m-auto items-start p-8 min-w-[340px] sm:min-w-96 border rounded-xl text-zinc-600 shadow-lg">
@@ -40,15 +42,22 @@ const Login = () => {
             required
           />
         </div>
-        <div className="w-full">
+        <div className="w-full relative">
           <p>Password</p>
           <input
-            type="password"
+            type={showPassword ? "text" : "password"} // Toggle between text and password
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             className="border border-zinc-300 rounded w-full p-2 mt-1 outline-primary"
             required
           />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-3 top-[36px] text-sm text-primary font-semibold"
+          >
+            {showPassword ? "Hide" : "Show"}
+          </button>
         </div>
         <button className="w-full bg-primary text-white py-2 rounded-md text-base">
           {state === "Sign Up" ? "Create Account" : "Login"}
