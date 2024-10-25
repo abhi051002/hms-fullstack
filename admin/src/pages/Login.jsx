@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { AdminContext } from "../context/AdminContext";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -71,10 +72,10 @@ const Login = () => {
             required
           />
           <span
-            className="absolute right-3 top-9 cursor-pointer text-primary"
+            className="absolute right-3 top-11 cursor-pointer"
             onClick={() => setShowPassword(!showPassword)} // Toggle the state
           >
-            {showPassword ? "Hide" : "Show"} {/* Toggle text */}
+            {showPassword ? <FaEyeSlash /> : <FaEye />} {/* Toggle text */}
           </span>
         </div>
 

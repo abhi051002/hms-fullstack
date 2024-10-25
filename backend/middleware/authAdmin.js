@@ -3,14 +3,15 @@ import jwt from "jsonwebtoken";
 // Admin Authentication Middleware
 const authAdmin = async (req, res, next) => {
   try {
-    const { aToken } = req.headers;
-    if (!aToken) {
+    const { atoken } = req.headers;
+    console.log(atoken);
+    if (!atoken) {
       return res.json({
         success: false,
         message: "Unauthorized Access denied",
       });
     }
-    const token_decode = jwt.verify(aToken, process.env.JWT_SECRET);
+    const token_decode = jwt.verify(atoken, process.env.JWT_SECRET);
     if (token_decode !== process.env.ADMIN_EMAIL + process.env.ADMIN_PASSWORD) {
       return res.json({
         success: false,

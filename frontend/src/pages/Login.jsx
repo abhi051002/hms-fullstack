@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const [state, setState] = useState("Sign Up");
@@ -54,9 +55,9 @@ const Login = () => {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-[36px] text-sm text-primary font-semibold"
+            className="absolute right-3 top-[42px] text-lg font-semibold"
           >
-            {showPassword ? "Hide" : "Show"}
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
           </button>
         </div>
         <button className="w-full bg-primary text-white py-2 rounded-md text-base">
