@@ -21,7 +21,6 @@ const Appointments = () => {
   const getAvailableSlots = () => {
     setDocSlots([]);
 
-    // Getting Current Date
     let today = new Date();
 
     if (today.getHours() >= 20 && today.getMinutes() > 30) {
@@ -29,16 +28,13 @@ const Appointments = () => {
       today.setHours(10, 0, 0, 0);
     }
     for (let i = 0; i < 20; i++) {
-      // getting date with index
       let currentDate = new Date(today);
       currentDate.setDate(today.getDate() + i);
 
-      // setting end time of the date with index
       let endTime = new Date();
       endTime.setDate(today.getDate() + i);
       endTime.setHours(21, 0, 0, 0);
 
-      // setting hours
       if (today.getDate() === currentDate.getDate()) {
         currentDate.setHours(
           currentDate.getHours() > 10 ? currentDate.getHours() + 1 : 10
@@ -55,13 +51,12 @@ const Appointments = () => {
           minute: "2-digit",
           hour12: true,
         });
-        // add slots to array
+
         timeSlots.push({
           datetime: new Date(currentDate),
           time: formattedTime,
         });
 
-        // Increment current time by 30 minutes
         currentDate.setMinutes(currentDate.getMinutes() + 30);
       }
       setDocSlots((prev) => [...prev, timeSlots]);
@@ -118,7 +113,7 @@ const Appointments = () => {
             <p className="text-gray-500 font-medium mt-4">
               Appointment Fee:{" "}
               <span className="text-gray-600">
-                {currencySymbol} {docInfo.fees}
+                {currencySymbol} {docInfo.fee}
               </span>
             </p>
           </div>
