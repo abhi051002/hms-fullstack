@@ -4,7 +4,6 @@ import jwt from "jsonwebtoken";
 const authAdmin = async (req, res, next) => {
   try {
     const { atoken } = req.headers;
-    console.log(atoken);
     if (!atoken) {
       return res.json({
         success: false,
