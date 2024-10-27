@@ -30,7 +30,7 @@ const Appointments = () => {
 
     let today = new Date();
 
-    if (today.getHours() >= 21) {
+    if (today.getHours() >= 20) {
       today.setDate(today.getDate() + 1);
       today.setHours(10, 0, 0, 0);
     }
