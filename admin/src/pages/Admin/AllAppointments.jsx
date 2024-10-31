@@ -58,13 +58,15 @@ const AllAppointments = () => {
               <p>{currency + " " + item.docData.fee}</p>
               {item.cancelled ? (
                 <p className="text-red-400 text-sm font-medium">Cancelled</p>
-              ) : (
+              ) : !item.isCompleted ? (
                 <img
                   src={assets.cancel_icon}
                   onClick={() => cancelAppointment(item._id)}
                   className="w-10 cursor-pointer"
                   alt=""
                 />
+              ) : (
+                <p className="text-green-400 text-sm font-medium">Completed</p>
               )}
             </div>
           ))}

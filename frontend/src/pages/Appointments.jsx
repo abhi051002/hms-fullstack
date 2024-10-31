@@ -29,16 +29,23 @@ const Appointments = () => {
     setDocSlots([]);
 
     let today = new Date();
-
     if (today.getHours() >= 20) {
-      today.setDate(today.getDate() + 1);
+      const lastDayOfMonth = new Date(
+        today.getFullYear(),
+        today.getMonth() + 1,
+        0
+      ).getDate();
+      if (today.getDate() === lastDayOfMonth) {
+        today.setMonth(today.getMonth() + 1, 1);
+      } else {
+        today.setDate(today.getDate() + 1);
+      }
       today.setHours(10, 0, 0, 0);
     }
     for (let i = 0; i < 20; i++) {
       let currentDate = new Date(today);
       currentDate.setDate(today.getDate() + i);
-
-      let endTime = new Date();
+      let endTime = new Date(today);
       endTime.setDate(today.getDate() + i);
       endTime.setHours(21, 0, 0, 0);
 

@@ -43,6 +43,7 @@ const Login = () => {
         });
         if (data.success) {
           localStorage.setItem("dToken", data.token);
+          navigate("/doctor");
           await sleep(2000);
           setDToken(data.token);
         } else {

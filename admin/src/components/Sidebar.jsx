@@ -17,7 +17,7 @@ const Sidebar = () => {
                 isActive ? "bg-[#F2F3FF] border-r-4 border-primary " : ""
               }`
             }
-            to={"/admin-dashboard"}
+            to={"/"}
           >
             <img src={assets.home_icon} alt="" />
             <p className="hidden md:block">Dashboard</p>
@@ -65,7 +65,7 @@ const Sidebar = () => {
                 isActive ? "bg-[#F2F3FF] border-r-4 border-primary " : ""
               }`
             }
-            to={"/doctor-dashboard"}
+            to={"/doctor"}
           >
             <img src={assets.home_icon} alt="" />
             <p className="hidden md:block">Dashboard</p>
@@ -76,7 +76,7 @@ const Sidebar = () => {
                 isActive ? "bg-[#F2F3FF] border-r-4 border-primary " : ""
               }`
             }
-            to={"/doctor-appointments"}
+            to={"/doctor/appointments"}
           >
             <img src={assets.appointment_icon} alt="" />
             <p className="hidden md:block">Appointments</p>
@@ -87,7 +87,7 @@ const Sidebar = () => {
                 isActive ? "bg-[#F2F3FF] border-r-4 border-primary " : ""
               }`
             }
-            to={"/doctor-profile"}
+            to={"/doctor/profile"}
           >
             <img src={assets.people_icon} alt="" />
             <p className="hidden md:block">Profile</p>
