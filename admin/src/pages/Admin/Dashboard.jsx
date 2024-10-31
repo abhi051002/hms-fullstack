@@ -68,7 +68,7 @@ const Dashboard = () => {
                       {item.docData.name}
                     </p>
                     <p className="text-gray-600">
-                      {slotDateFormat(item.slotDate)}
+                      {slotDateFormat(item.slotDate)} ,{item.slotTime}
                     </p>
                   </div>
                   {item.cancelled ? (

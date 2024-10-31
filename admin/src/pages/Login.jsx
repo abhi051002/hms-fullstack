@@ -5,6 +5,7 @@ import { AdminContext } from "../context/AdminContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { DoctorContext } from "../context/DoctorContext";
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -15,6 +16,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
   const { setAToken, backendUrl } = useContext(AdminContext);
+  const { setDToken, dToken } = useContext(DoctorContext);
   const navigate = useNavigate();
 
   const onSubmitHandler = async (event) => {
@@ -31,6 +33,18 @@ const Login = () => {
           await sleep(2000);
           toast.success(data.message);
           setAToken(data.token);
+        } else {
+          toast.error(data.message);
+        }
+      } else {
+        const { data } = await axios.post(backendUrl + "/api/doctor/login", {
+          email,
+          password,
+        });
+        if (data.success) {
+          localStorage.setItem("dToken", data.token);
+          await sleep(2000);
+          setDToken(data.token);
         } else {
           toast.error(data.message);
         }
