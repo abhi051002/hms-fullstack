@@ -13,8 +13,8 @@
 
 _This project demonstrates a comprehensive hospital management solution, supporting an intuitive user experience, robust role-specific features, and secure online payments, providing seamless interaction for patients, doctors, and administrators._
 
-## Live Preview : https://hms-frontend-kappa.vercel.app/
-## Admin/Doctor Portal : https://hms-admin-nine.vercel.app/
+**Live Preview** : https://hms-frontend-kappa.vercel.app/
+**Admin/Doctor Portal** : https://hms-admin-nine.vercel.app/
 
 ## Here are some references images
 
