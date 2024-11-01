@@ -1,2 +1,31 @@
-# hms-fullstack
-It is a Fullstack Hospital Manegment System  Project Built Using Mern Stack
+# Hospital Management System
+
+## This is a Fullstack Hospital Management System project built using the MERN stack, with three distinct user roles: User, Doctor, and Admin.
+
+1. **User Features**:
+   Users can register or log in to explore the list of available doctors by their specializations. They can easily book appointments, make payments online through Razorpay, and view all upcoming and past appointments. Users can also update their personal information in the "My Profile" section.
+
+2. **Doctor Features**:
+   Doctors can log in to view and manage their appointments and update their profiles. Through their personalized dashboard, they can track total earnings, the number of appointments, and patient interactions. Doctors have the option to complete or cancel appointments directly from their dashboard, enabling efficient appointment management.
+
+3. **Admin Features**:
+   The admin can log in to oversee all aspects of the system. They have access to an Admin Dashboard that displays the total number of doctors, patients, and booked appointments. Additionally, the admin can view recent appointments and manage doctor profiles and their schedules, streamlining the system's functionality.
+
+_This project demonstrates a comprehensive hospital management solution, supporting an intuitive user experience, robust role-specific features, and secure online payments, providing seamless interaction for patients, doctors, and administrators._
+
+## Here are some references images
+
+### User Registration & Login
+
+<img src="frontend/src/readme_images/userSignup.png" alt="User Registration" style="padding:0 10px;"/>
+
+<img src="frontend/src/readme_images/userLogin.png" alt="User Login" style="padding:0 10px;"/>
+
+## Home Screen
+
+<img src="frontend/src/readme_images/home1.png" alt="Home" style="padding:0 10px;"/>
+
+<img src="frontend/src/readme_images/home-findbySpeciality.png" alt="Home" style="padding:0 10px;"/>
+
+<img src="frontend/src/readme_images/footer.png" alt="Footer" style="padding:0 10px;"/>
+
