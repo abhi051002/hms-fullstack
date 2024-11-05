@@ -42,6 +42,12 @@ const Navbar = () => {
           <li className="py-1">Contact</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
         </NavLink>
+        <NavLink to="https://hms-admin-nine.vercel.app/" target="_blank">
+          <p className="py-1 px-2 rounded-md text-white border bg-primary ">
+            Admin / Doctor Panel
+          </p>
+          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+        </NavLink>
       </ul>
       <div className="flex items-center gap-4">
         {token && userData ? (
