@@ -88,4 +88,4 @@ _This project demonstrates a comprehensive hospital management solution, support
 
 <img src="frontend/src/readme_images/doctorProfile.png" alt="Doctor Profile" style="padding:0 10px;"/>
 
-Thank You for Visiting (praying) (target) (1f38a_confettiball) 
+Thank You for Visiting 🎊 🎉 🙏
